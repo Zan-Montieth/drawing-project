@@ -1,11 +1,8 @@
-function generateHexGrid(gridXdimension, gridYdimension){
+function generateHexGrid(gridXdimension, gridYdimension) {
     const parentContainer = document.getElementById("drawingArea");
-    let hexElement = document.createElement("div")
+    let hexElement = document.createElement("div");
     hexElement.classList.add("hex");
-    for(row = 0; row < gridYdimension; row++){
-        for(hex = 0; hex < gridXdimension; hex++){
-            parentContainer.appendChild(hexElement.cloneNode(true));
-            console.log(hex, row)
-        }
+    for (numberOfHexes = 0; numberOfHexes < (gridYdimension * gridXdimension - (gridYdimension/2)); numberOfHexes++) {
+        parentContainer.appendChild(hexElement.cloneNode(true));
     }
 }

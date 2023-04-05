@@ -1,7 +1,22 @@
+body, html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+}
+
+.sizeConstraint{
+    width: 390px;
+}
+
 #drawingWrapper {
     display: flex;
-    --s: 100px; /* size  */
-    --m: 4px; /* margin */
+    --s: 22px; /* size  */
+    --m: 1px; /* margin */
     --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
 }
 
