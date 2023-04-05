@@ -9,13 +9,13 @@ body{
     background-color: #121212;
 }
 
-.sizeConstraint{
+#sizeConstraint{
     width: 390px;
 }
 
 #drawingWrapper {
     display: flex;
-    --s: 22px; /* size  */
+    --s: 25px; /* size  */
     --m: 1px; /* margin */
     --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
 }
