@@ -15,7 +15,7 @@ body{
 
 #drawingWrapper {
     display: flex;
-    --s: 25px; /* size  */
+    --s: 20px; /* size  */
     --m: 1px; /* margin */
     --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
 }
@@ -31,14 +31,14 @@ body{
     display: inline-block;
     font-size: initial;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-    background: red;
     margin-bottom: calc(var(--m) - var(--s) * 0.2885);
-    background-color: aqua;
+    /* transition: 0.2s; */
+    /* background-color: #FFFFFF; */
 }
-
+/* 
 #drawingArea div:nth-child(odd) {
     background: green;
-}
+} */
 
 #drawingArea::before {
     content: "";
@@ -49,4 +49,8 @@ body{
         #0000 0 calc(var(--f) - 3px),
         #000 0 var(--f)
     );
+}
+
+.white{
+    background-color: #FFFFFF;
 }
