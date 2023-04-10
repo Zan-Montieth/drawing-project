@@ -1,6 +1,6 @@
 let currentColor = "";
 let curGridXdimension = 0;
-let curGridYdimension = 0
+let curGridYdimension = 0;
 
 function generateHexGrid(gridXdimension, gridYdimension, colorCode) {
     const gridSize = gridYdimension * gridXdimension - gridYdimension / 2;
@@ -36,18 +36,30 @@ function incrementColor() {
     let classTag = this.classList[1].split("", 6);
     let classIndex = "";
     let newClass = "";
+    let colorIndex = 0;
     if (oldClass.length == 7) {
         classIndex = this.classList[1].charAt(6);
     } else if (oldClass.length == 8) {
         classIndex = this.classList[1].slice(-2);
     }
-    if (classIndex < 4) {
+    if (classTag.toString().replaceAll(",", "") == "bw-bg-") {
+        colorIndex = 4;
+    } else if (classTag.toString().replaceAll(",", "") == "cl-bg-") {
+        colorIndex = 17;
+    }
+    if (classIndex < colorIndex) {
         newClass = (classTag + (+classIndex + 1))
             .toString()
             .replaceAll(",", "");
         this.classList.remove(oldClass);
         this.classList.add(newClass);
-    } else {
+    } else if(classIndex == 17){
+        newClass = (classTag + 1)
+            .toString()
+            .replaceAll(",", "");
+        this.classList.remove(oldClass);
+        this.classList.add(newClass);
+    }else {
         return;
     }
 }
@@ -58,7 +70,13 @@ function reset() {
     while (parentContainer.firstChild) {
         parentContainer.removeChild(parentContainer.firstChild);
     }
-    generateHexGrid(curGridXdimension, curGridYdimension, currentColor)
+    generateHexGrid(curGridXdimension, curGridYdimension, currentColor);
+}
+
+function setColor(colorIn) {
+    currentColor = colorIn;
+    reset();
+    console.log("Set Color called");
 }
 
 function setButtonFunctions() {
@@ -67,4 +85,10 @@ function setButtonFunctions() {
     let clSet = document.getElementById("color");
 
     clear.addEventListener("click", reset);
+    clSet.addEventListener("click", function () {
+        setColor("cl-bg-1");
+    });
+    bwSet.addEventListener("click", function () {
+        setColor("bw-bg-1");
+    });
 }
