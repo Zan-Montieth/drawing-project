@@ -26,10 +26,10 @@
 .bw-bg-7 { background-color: #333333; }
 .bw-bg-8 { background-color: #000000; } */
 
-/* .bw-bg-1 { background-color: #FFFFFF; }
+.bw-bg-1 { background-color: #FFFFFF; }
 .bw-bg-2 { background-color: #BBBBBB; }
 .bw-bg-3 { background-color: #777777; }
-.bw-bg-4 { background-color: #000000; } */
+.bw-bg-4 { background-color: #000000; }
 
 /* Black and white class tags, incrementally getting lighter Inverted for alternate color scape */
 
@@ -59,10 +59,10 @@
 .bw-bg-7 { background-color: #999999; }
 .bw-bg-8 { background-color: #FFFFFF; } */
 
-.bw-bg-1 {background-color: #000000;}
+/* .bw-bg-1 {background-color: #000000;}
 .bw-bg-2 {background-color: #404040;}
 .bw-bg-3 {background-color: #808080;}
-.bw-bg-4 {background-color: #ffffff;}
+.bw-bg-4 {background-color: #ffffff;} */
 
 .cl-bg-1 {background-color: #ffffff;}
 .cl-bg-2 {background-color: #ff0000;}
