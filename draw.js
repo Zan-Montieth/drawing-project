@@ -2,6 +2,7 @@ let currentColor = "";
 let curGridXdimension = 0;
 let curGridYdimension = 0;
 
+
 function generateHexGrid(gridXdimension, gridYdimension, colorCode) {
     const gridSize = gridYdimension * gridXdimension - gridYdimension / 2;
     const parentContainer = document.getElementById("drawingArea");
@@ -76,13 +77,37 @@ function reset() {
 function setColor(colorIn) {
     currentColor = colorIn;
     reset();
-    console.log("Set Color called");
+}
+
+function changeSize(sizeIn){
+    let root = document.body;
+    
+    if(sizeIn <= 3){
+        root.style.setProperty('--s', "200px");
+    }else if(sizeIn <= 7){
+        root.style.setProperty('--s', "100px");
+    }else if(sizeIn <= 9){
+        root.style.setProperty('--s', "80px");
+    }else if(sizeIn <= 13){
+        root.style.setProperty('--s', "60px");
+    }else if(sizeIn <=18){
+        root.style.setProperty('--s', "40px");
+    }else if(sizeIn <=25){
+        root.style.setProperty('--s', "20px");
+    }
+
+    console.log(root.style.getPropertyValue('--s'))
+
+    curGridXdimension = sizeIn;
+    curGridYdimension = sizeIn;
+    reset();
 }
 
 function setButtonFunctions() {
     let clear = document.getElementById("clear");
     let bwSet = document.getElementById("bw");
     let clSet = document.getElementById("color");
+    let sizeChange = document.getElementById("gridSize")
 
     clear.addEventListener("click", reset);
     clSet.addEventListener("click", function () {
@@ -91,4 +116,7 @@ function setButtonFunctions() {
     bwSet.addEventListener("click", function () {
         setColor("bw-bg-1");
     });
+    sizeChange.addEventListener("change", function(){
+        changeSize(sizeChange.value);
+    })
 }

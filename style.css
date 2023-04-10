@@ -4,12 +4,13 @@ body, html{
 
 body{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: #121212;
     --s: 20px; /* size  */
     --m: 1px; /* margin */
     --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
+    flex-direction: column;
 }
 
 #sizeConstraint{
@@ -51,11 +52,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-self: end;
 }
 
 button{
-    margin-top: var(--s);
-    padding: calc(var(--s));
+    margin-top: calc(var(--s) / 2);
+    padding: 20px;
     background-color: darkgray;
     border: gray 2px solid;
     font-weight: bold;
@@ -74,11 +76,11 @@ button:hover{
 
 input, output{
     color: white;
-    margin-top: var(--s);
+    margin-top: calc(var(--s)/2);
 }
 
 output{
-    padding: calc(var(--s));
+    padding: 20px;
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
 }
